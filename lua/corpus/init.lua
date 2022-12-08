@@ -57,6 +57,7 @@ corpus = {
     if file ~= nil then
       -- In a Corpus directory, trying to open a file.
       vim.cmd('edit ' .. vim.fn.fnameescape(file))
+      vim.fn.search(selection, 'c')
     else
       -- In create mode, or not in a Corpus directory.
       local directory = corpus.directory()
